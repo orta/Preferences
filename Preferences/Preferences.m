@@ -1,17 +1,13 @@
-//
-//  Preferences.m
-//  Preferences
-//
-//  Created by Orta on 21/03/2015.
-//  Copyright (c) 2015 orta therox. All rights reserved.
-//
-
 #import "Preferences.h"
+#import "PreferencesEnhancer.h"
 
 static Preferences *sharedPlugin;
 
-@interface Preferences()
+@interface IDEPreferencesController : NSWindowController
+@end
 
+@interface Preferences()
+@property (nonatomic, strong, readwrite) PreferencesEnhancer *enhancer;
 @property (nonatomic, strong, readwrite) NSBundle *bundle;
 @end
 
@@ -35,35 +31,15 @@ static Preferences *sharedPlugin;
 
 - (id)initWithBundle:(NSBundle *)plugin
 {
-    if (self = [super init]) {
-        // reference to plugin's bundle, for resource access
-        self.bundle = plugin;
-        
-        // Create menu items, initialize UI, etc.
+    self = [super init];
+    if (!self) return nil;
 
-        // Sample Menu Item:
-        NSMenuItem *menuItem = [[NSApp mainMenu] itemWithTitle:@"Edit"];
-        if (menuItem) {
-            [[menuItem submenu] addItem:[NSMenuItem separatorItem]];
-            NSMenuItem *actionMenuItem = [[NSMenuItem alloc] initWithTitle:@"Do Action" action:@selector(doMenuAction) keyEquivalent:@""];
-            [actionMenuItem setTarget:self];
-            [[menuItem submenu] addItem:actionMenuItem];
-        }
-    }
+    _bundle = plugin;
+    _enhancer = [[PreferencesEnhancer alloc] init];
+
+    [self.enhancer swizzleWindowDidLoad];
+
     return self;
-}
-
-// Sample Action, for menu item:
-- (void)doMenuAction
-{
-    NSAlert *alert = [[NSAlert alloc] init];
-    [alert setMessageText:@"Hello, World"];
-    [alert runModal];
-}
-
-- (void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end
