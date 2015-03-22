@@ -1,0 +1,290 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		602601351ABE4CF700D5EBCB /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602601341ABE4CF700D5EBCB /* AppKit.framework */; };
+		602601371ABE4CF700D5EBCB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602601361ABE4CF700D5EBCB /* Foundation.framework */; };
+		6026013C1ABE4CF700D5EBCB /* HasPreferences.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = 6026013B1ABE4CF700D5EBCB /* HasPreferences.xcscheme */; };
+		6026013F1ABE4CF700D5EBCB /* HasPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 6026013E1ABE4CF700D5EBCB /* HasPreferences.m */; };
+		602601471ABE4D1D00D5EBCB /* ExamplePreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602601461ABE4D1D00D5EBCB /* ExamplePreferencesViewController.m */; };
+		6026014A1ABE4D6E00D5EBCB /* ExamplePreferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 602601491ABE4D6E00D5EBCB /* ExamplePreferences.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		602601311ABE4CF700D5EBCB /* HasPreferences.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HasPreferences.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		602601341ABE4CF700D5EBCB /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		602601361ABE4CF700D5EBCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		6026013A1ABE4CF700D5EBCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6026013B1ABE4CF700D5EBCB /* HasPreferences.xcscheme */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = HasPreferences.xcscheme; path = HasPreferences.xcodeproj/xcshareddata/xcschemes/HasPreferences.xcscheme; sourceTree = SOURCE_ROOT; };
+		6026013D1ABE4CF700D5EBCB /* HasPreferences.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HasPreferences.h; sourceTree = "<group>"; };
+		6026013E1ABE4CF700D5EBCB /* HasPreferences.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HasPreferences.m; sourceTree = "<group>"; };
+		602601451ABE4D1D00D5EBCB /* ExamplePreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamplePreferencesViewController.h; sourceTree = "<group>"; };
+		602601461ABE4D1D00D5EBCB /* ExamplePreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamplePreferencesViewController.m; sourceTree = "<group>"; };
+		602601481ABE4D5400D5EBCB /* PreferencesProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreferencesProtocol.h; sourceTree = "<group>"; };
+		602601491ABE4D6E00D5EBCB /* ExamplePreferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExamplePreferences.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6026012F1ABE4CF700D5EBCB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				602601351ABE4CF700D5EBCB /* AppKit.framework in Frameworks */,
+				602601371ABE4CF700D5EBCB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		602601281ABE4CF700D5EBCB = {
+			isa = PBXGroup;
+			children = (
+				602601381ABE4CF700D5EBCB /* HasPreferences */,
+				602601331ABE4CF700D5EBCB /* Frameworks */,
+				602601321ABE4CF700D5EBCB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		602601321ABE4CF700D5EBCB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				602601311ABE4CF700D5EBCB /* HasPreferences.xcplugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		602601331ABE4CF700D5EBCB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				602601341ABE4CF700D5EBCB /* AppKit.framework */,
+				602601361ABE4CF700D5EBCB /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		602601381ABE4CF700D5EBCB /* HasPreferences */ = {
+			isa = PBXGroup;
+			children = (
+				602601481ABE4D5400D5EBCB /* PreferencesProtocol.h */,
+				6026013D1ABE4CF700D5EBCB /* HasPreferences.h */,
+				6026013E1ABE4CF700D5EBCB /* HasPreferences.m */,
+				602601391ABE4CF700D5EBCB /* Supporting Files */,
+				602601451ABE4D1D00D5EBCB /* ExamplePreferencesViewController.h */,
+				602601461ABE4D1D00D5EBCB /* ExamplePreferencesViewController.m */,
+				602601491ABE4D6E00D5EBCB /* ExamplePreferences.xib */,
+			);
+			path = HasPreferences;
+			sourceTree = "<group>";
+		};
+		602601391ABE4CF700D5EBCB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6026013A1ABE4CF700D5EBCB /* Info.plist */,
+				6026013B1ABE4CF700D5EBCB /* HasPreferences.xcscheme */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		602601301ABE4CF700D5EBCB /* HasPreferences */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 602601421ABE4CF700D5EBCB /* Build configuration list for PBXNativeTarget "HasPreferences" */;
+			buildPhases = (
+				6026012D1ABE4CF700D5EBCB /* Sources */,
+				6026012E1ABE4CF700D5EBCB /* Resources */,
+				6026012F1ABE4CF700D5EBCB /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HasPreferences;
+			productName = HasPreferences;
+			productReference = 602601311ABE4CF700D5EBCB /* HasPreferences.xcplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		602601291ABE4CF700D5EBCB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = Orta;
+				TargetAttributes = {
+					602601301ABE4CF700D5EBCB = {
+						CreatedOnToolsVersion = 6.2;
+					};
+				};
+			};
+			buildConfigurationList = 6026012C1ABE4CF700D5EBCB /* Build configuration list for PBXProject "HasPreferences" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 602601281ABE4CF700D5EBCB;
+			productRefGroup = 602601321ABE4CF700D5EBCB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				602601301ABE4CF700D5EBCB /* HasPreferences */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6026012E1ABE4CF700D5EBCB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6026013C1ABE4CF700D5EBCB /* HasPreferences.xcscheme in Resources */,
+				6026014A1ABE4D6E00D5EBCB /* ExamplePreferences.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6026012D1ABE4CF700D5EBCB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				602601471ABE4D1D00D5EBCB /* ExamplePreferencesViewController.m in Sources */,
+				6026013F1ABE4CF700D5EBCB /* HasPreferences.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		602601401ABE4CF700D5EBCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+			};
+			name = Debug;
+		};
+		602601411ABE4CF700D5EBCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+			};
+			name = Release;
+		};
+		602601431ABE4CF700D5EBCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				INFOPLIST_FILE = HasPreferences/Info.plist;
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xcplugin;
+			};
+			name = Debug;
+		};
+		602601441ABE4CF700D5EBCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				INFOPLIST_FILE = HasPreferences/Info.plist;
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xcplugin;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6026012C1ABE4CF700D5EBCB /* Build configuration list for PBXProject "HasPreferences" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				602601401ABE4CF700D5EBCB /* Debug */,
+				602601411ABE4CF700D5EBCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		602601421ABE4CF700D5EBCB /* Build configuration list for PBXNativeTarget "HasPreferences" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				602601431ABE4CF700D5EBCB /* Debug */,
+				602601441ABE4CF700D5EBCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 602601291ABE4CF700D5EBCB /* Project object */;
+}
