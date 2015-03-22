@@ -1,4 +1,4 @@
-# Preference support for your plugins.
+# Add preferences for your Xcode plugins.
 
 ![Screenshot](https://raw.github.com/orta/Preferences/master/web/screenshot.png)
 
