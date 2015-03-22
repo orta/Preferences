@@ -39,18 +39,18 @@ static NSString* const DMMDerivedDataExterminatorShowButtonInTitleBar = @"DMMDer
         staticEnhancer = self;
 
         Class prefs = NSClassFromString(@"IDEPreferencesController");
-        for (NSString *selector in @[@"windowDidLoad", @"toolbarAllowedItemIdentifiers:", @"toolbarDefaultItemIdentifiers:", @"toolbar:itemForItemIdentifier:willBeInsertedIntoToolbar:"]) {
+        NSArray *selectors = @[@"windowDidLoad",
+                               @"toolbarAllowedItemIdentifiers:",
+                               @"toolbarDefaultItemIdentifiers:",
+                               @"toolbar:itemForItemIdentifier:willBeInsertedIntoToolbar:",
+                               @"toolbarSelectableItemIdentifiers:",
+                               @"selectPreferencePaneWithIdentifier:"];
+
+        for (NSString *selector in selectors) {
             SEL originalSelector = NSSelectorFromString(selector);
             SEL newSelector = NSSelectorFromString([@"swizzled_preferences_" stringByAppendingString:selector]);
             [self swizzleClass:prefs originalSelector:originalSelector swizzledSelector:newSelector instanceMethod:YES];
         }
-
-        //        [self swizzleClass:prefs originalSelector:@selector(windowDidLoad) swizzledSelector:@selector(swizzled_preferences_windowDidLoad) instanceMethod:YES];
-//        [self swizzleClass:prefs originalSelector:@selector(toolbarAllowedItemIdentifiers:) swizzledSelector:@selector(swizzled_preferences_toolbarAllowedItemIdentifiers:) instanceMethod:YES];
-//        [self swizzleClass:prefs originalSelector:@selector(toolbarDefaultItemIdentifiers:) swizzledSelector:@selector(swizzled_preferences_toolbarDefaultItemIdentifiers:) instanceMethod:YES];
-//        [self swizzleClass:prefs originalSelector:@selector(toolbar:itemForItemIdentifier:willBeInsertedIntoToolbar:) swizzledSelector:@selector(swizzled_preferences_toolbar:itemForItemIdentifier:willBeInsertedIntoToolbar:) instanceMethod:YES];
-
-
     });
 }
 
@@ -85,57 +85,29 @@ static NSString* const DMMDerivedDataExterminatorShowButtonInTitleBar = @"DMMDer
     [controller.window setFrame:newFrame display:YES animate:NO];
 }
 
-- (void)setupToolbarForWindowController:(NSWindowController *)controller
-{
-    NSObject<NSToolbarDelegate> *delegate = controller.window.toolbar.delegate;
-    NSArray *allowedIdentifiers = [delegate toolbarAllowedItemIdentifiers:nil];
-    id manager = [NSClassFromString(@"DVTPlugInManager") defaultPlugInManager];
-
-    
-    NSString *bundleID = [[NSBundle bundleForClass:self.class] bundleIdentifier];
-        id other = [manager plugInWithIdentifier:bundleID];
-
-//    [controller toolbar:controller.window.toolbar itemForItemIdentifier:bundleID willBeInsertedIntoToolbar:YES];
-
-//    NSMutableDictionary *providers = [delegate toolbarItemProviders].mutableCopy;
-//    if (![allowedIdentifiers containsObject:DMMDerivedDataExterminatorButtonIdentifier]) {
-//        allowedIdentifiers = [allowedIdentifiers arrayByAddingObject:DMMDerivedDataExterminatorButtonIdentifier];
-//        providers[DMMDerivedDataExterminatorButtonIdentifier] = self;
-//        [delegate setValue:allowedIdentifiers forKey:@"_allowedItemIdentifiers"];
-//        [delegate setValue:providers forKey:@"_toolbarItemProviders"];
-//    }
-
-}
-
-- (void)insertToolbarButtonForWindow:(NSWindow*)window
-{
-    for (NSToolbarItem *item in window.toolbar.items) {
-        if ([item.itemIdentifier isEqualToString:DMMDerivedDataExterminatorButtonIdentifier])
-            return;
-    }
-
-    NSInteger index = MAX(0, window.toolbar.items.count - 1);
-    [window.toolbar insertItemWithItemIdentifier:DMMDerivedDataExterminatorButtonIdentifier atIndex:index];
-}
-
-
 - (NSToolbarItem *)toolbarItemForPreferences
 {
     Class DVTViewControllerToolbarItem = NSClassFromString(@"DVTViewControllerToolbarItem");
     NSToolbarItem *settingsItem = (NSToolbarItem *)[[DVTViewControllerToolbarItem alloc] initWithItemIdentifier:DMMDerivedDataExterminatorButtonIdentifier];
     NSBundle *bundle = [NSBundle bundleForClass:self.class];
     NSImage *image = [[NSImage alloc] initByReferencingFile:[bundle pathForResource:@"toolbar_icon" ofType:@"png"]];
-    image.template = YES;
 
     settingsItem.target = self;
-    settingsItem.action = @selector(showPluginMenu);
+    settingsItem.action = @selector(showPluginMenu:);
 
     settingsItem.toolTip = @"Settings for Plugins";
     settingsItem.label = @"Plugins";
+    settingsItem.image = image;
+
     return settingsItem;
 }
 
-- (void)showPluginMenu
+- (void)showPluginMenu:(NSToolbarItem *)item
+{
+    
+}
+
+- (void)removePluginView
 {
 
 }
@@ -152,7 +124,6 @@ static NSString* const DMMDerivedDataExterminatorShowButtonInTitleBar = @"DMMDer
 
     NSWindowController *this = (id)self;
     [staticEnhancer resizeWindowForWindowController:this];
-    [staticEnhancer setupToolbarForWindowController:this];
 }
 
 - (id)swizzled_preferences_toolbarAllowedItemIdentifiers:(NSToolbar *)toolbar
@@ -168,6 +139,25 @@ static NSString* const DMMDerivedDataExterminatorShowButtonInTitleBar = @"DMMDer
     NSString *bundleID = [[NSBundle bundleForClass:staticEnhancer.class] bundleIdentifier];
     return [results arrayByAddingObject:bundleID];
 }
+
+- (id)swizzled_preferences_toolbarSelectableItemIdentifiers:(NSToolbar *)toolbar
+{
+    NSArray *results = [self swizzled_preferences_toolbarSelectableItemIdentifiers:toolbar];
+    NSString *bundleID = [[NSBundle bundleForClass:staticEnhancer.class] bundleIdentifier];
+    return [results arrayByAddingObject:bundleID];
+}
+
+- (void)swizzled_preferences_selectPreferencePaneWithIdentifier:(NSString *)identifier
+{
+    NSString *bundleID = [[NSBundle bundleForClass:staticEnhancer.class] bundleIdentifier];
+    if ([identifier isEqualToString:bundleID]) {
+        return [staticEnhancer removePluginView];
+
+    } else {
+        [self swizzled_preferences_selectPreferencePaneWithIdentifier:identifier];
+    }
+}
+
 
 - (NSToolbarItem *)swizzled_preferences_toolbar:(NSToolbar *)toolbar itemForItemIdentifier:(NSString *)itemIdentifier willBeInsertedIntoToolbar:(BOOL)flag
 {
