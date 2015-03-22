@@ -110,7 +110,9 @@ static NSString* const DMMDerivedDataExterminatorShowButtonInTitleBar = @"DMMDer
     }
 
     NSWindow *window = [self.preferencesWindowController window];
-    CGRect newFrame = CGRectMake(window.frame.origin.x, window.frame.origin.y, window.frame.size.width, 600);
+    CGFloat windowHeight = 560;
+
+    CGRect newFrame = CGRectMake(window.frame.origin.x, window.frame.origin.y, window.frame.size.width, windowHeight);
     [window setFrame:newFrame display:NO animate:YES];
 
     for (NSView *view in [window.contentView subviews]) {

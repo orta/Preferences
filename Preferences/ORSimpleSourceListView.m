@@ -11,7 +11,7 @@
 CGFloat ORCellHeight = 44;
 CGFloat ORCellLeftPadding = 12;
 
-CGFloat ORCellTitleLeftPadding = 42;
+CGFloat ORCellTitleLeftPadding = 8;
 
 CGFloat ORCellItemLeftPadding = 16;
 CGFloat ORCellItemTopPadding = 14;
