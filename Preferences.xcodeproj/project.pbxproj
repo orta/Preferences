@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		602601221ABE31C400D5EBCB /* toolbar_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 602601211ABE31C400D5EBCB /* toolbar_icon.png */; };
 		60C8922B1ABDCA2D001801F9 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60C8922A1ABDCA2D001801F9 /* AppKit.framework */; };
 		60C8922D1ABDCA2D001801F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60C8922C1ABDCA2D001801F9 /* Foundation.framework */; };
 		60C892321ABDCA2D001801F9 /* Preferences.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = 60C892311ABDCA2D001801F9 /* Preferences.xcscheme */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		602601211ABE31C400D5EBCB /* toolbar_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbar_icon.png; sourceTree = "<group>"; };
 		609999091ABDCC3600C3431A /* PreferencesProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreferencesProtocol.h; sourceTree = "<group>"; };
 		60C892271ABDCA2D001801F9 /* Preferences.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Preferences.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		60C8922A1ABDCA2D001801F9 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
@@ -40,6 +42,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		602601201ABE31B000D5EBCB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				602601211ABE31C400D5EBCB /* toolbar_icon.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		60C8921E1ABDCA2D001801F9 = {
 			isa = PBXGroup;
 			children = (
@@ -69,12 +79,13 @@
 		60C8922E1ABDCA2D001801F9 /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
+				602601201ABE31B000D5EBCB /* Resources */,
 				609999091ABDCC3600C3431A /* PreferencesProtocol.h */,
 				60C892331ABDCA2D001801F9 /* Preferences.h */,
 				60C892341ABDCA2D001801F9 /* Preferences.m */,
-				60C8922F1ABDCA2D001801F9 /* Supporting Files */,
 				60C8923B1ABDD3F8001801F9 /* PreferencesEnhancer.h */,
 				60C8923C1ABDD3F8001801F9 /* PreferencesEnhancer.m */,
+				60C8922F1ABDCA2D001801F9 /* Supporting Files */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
@@ -144,6 +155,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				602601221ABE31C400D5EBCB /* toolbar_icon.png in Resources */,
 				60C892321ABDCA2D001801F9 /* Preferences.xcscheme in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
