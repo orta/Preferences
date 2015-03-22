@@ -1,6 +1,7 @@
 #import "PreferencesEnhancer.h"
 #import <AppKit/AppKit.h>
 #import <objc/runtime.h>
+#import "PreferencesEditorViewController.h"
 
 static PreferencesEnhancer *staticEnhancer;
 
@@ -20,6 +21,7 @@ static PreferencesEnhancer *staticEnhancer;
 
 // https://github.com/larsxschneider/ShowInGitHub/blob/master/Source/Libraries/XcodeFrameworks/IDEKit/IDEPreferencesController.h
 
++ (id)defaultPreferencesController;
 - (id)toolbar:(id)arg1 itemForItemIdentifier:(id)arg2 willBeInsertedIntoToolbar:(BOOL)arg3;
 - (id)toolbarAllowedItemIdentifiers:(id)arg1;
 - (id)toolbarDefaultItemIdentifiers:(id)arg1;
@@ -80,9 +82,8 @@ static NSString* const DMMDerivedDataExterminatorShowButtonInTitleBar = @"DMMDer
 - (void)resizeWindowForWindowController:(NSWindowController *)controller
 {
     CGFloat additionalWidth = 60;
-    NSRect frame = [controller.window frame];
-    CGRect newFrame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width + additionalWidth, frame.size.height);
-    [controller.window setFrame:newFrame display:YES animate:NO];
+    CGSize fixedSize = CGSizeMake(controller.window.minSize.height, controller.window.minSize.width + additionalWidth);
+    [controller.window setMinSize:fixedSize];
 }
 
 - (NSToolbarItem *)toolbarItemForPreferences
@@ -104,12 +105,28 @@ static NSString* const DMMDerivedDataExterminatorShowButtonInTitleBar = @"DMMDer
 
 - (void)showPluginMenu:(NSToolbarItem *)item
 {
-    
+    if (!self.preferencesViewController) {
+        self.preferencesViewController = (id)[[PreferencesEditorViewController alloc] init];
+    }
+
+    NSWindow *window = [self.preferencesWindowController window];
+    CGRect newFrame = CGRectMake(window.frame.origin.x, window.frame.origin.y, window.frame.size.width, 600);
+    [window setFrame:newFrame display:NO animate:YES];
+
+    for (NSView *view in [window.contentView subviews]) {
+        [view setHidden:YES];
+    }
+    [window.contentView addSubview:self.preferencesViewController.view];
 }
 
 - (void)removePluginView
 {
+    [self.preferencesViewController.view removeFromSuperview];
+}
 
+- (NSWindowController *)preferencesWindowController
+{
+    return [NSClassFromString(@"IDEPreferencesController") defaultPreferencesController];
 }
 
 @end
@@ -149,15 +166,9 @@ static NSString* const DMMDerivedDataExterminatorShowButtonInTitleBar = @"DMMDer
 
 - (void)swizzled_preferences_selectPreferencePaneWithIdentifier:(NSString *)identifier
 {
-    NSString *bundleID = [[NSBundle bundleForClass:staticEnhancer.class] bundleIdentifier];
-    if ([identifier isEqualToString:bundleID]) {
-        return [staticEnhancer removePluginView];
-
-    } else {
-        [self swizzled_preferences_selectPreferencePaneWithIdentifier:identifier];
-    }
+    [staticEnhancer removePluginView];
+    [self swizzled_preferences_selectPreferencePaneWithIdentifier:identifier];
 }
-
 
 - (NSToolbarItem *)swizzled_preferences_toolbar:(NSToolbar *)toolbar itemForItemIdentifier:(NSString *)itemIdentifier willBeInsertedIntoToolbar:(BOOL)flag
 {

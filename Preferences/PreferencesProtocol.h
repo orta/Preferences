@@ -2,10 +2,7 @@
 
 @protocol PreferenceHost
 
-- (NSString *)nameForPanel;
-
-@optional
-- (NSNib *)nibForPanel;
-- (NSView *)viewForPanel;
++ (NSString *)titleForPreferences;
++ (NSViewController *)viewControllerForPreferences;
 
 @end
