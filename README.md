@@ -18,5 +18,21 @@ Add support for this protocol to one of the classes in your plugin
 @end
 ```
 
-and return a view controller, currently the view frame is 500 by 440.
+and return a view controller, currently the view frame is 500 by 440. If you'd like to check if someone has the plugin installed, see if  `NSClassFromString(@"PreferencesEnhancer")` returns something.
+
+
+### Installation
+
+
+```
+git clone https://github.com/orta/Preferences.git
+cd Preferences
+xcodebuild
+```
+
+Then restart Xcode.
+
+### Example
+
+There is an example plugin which has support for Preferences in the example folder.
 
