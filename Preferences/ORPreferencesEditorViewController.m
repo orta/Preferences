@@ -1,13 +1,13 @@
-#import "PreferencesEditorViewController.h"
+#import "ORPreferencesEditorViewController.h"
 #import "PreferencesProtocol.h"
 #import <objc/runtime.h>
 
-@interface PreferencesEditorViewController()
+@interface ORPreferencesEditorViewController()
 @property (nonatomic, copy, readonly) NSArray *supportedClasses;
 @property (nonatomic, strong, readwrite) NSViewController *currentViewController;
 @end
 
-@implementation PreferencesEditorViewController
+@implementation ORPreferencesEditorViewController
 
 - (instancetype)init
 {
@@ -49,7 +49,7 @@
 
 - (ORSourceListItem *)sourceList:(ORSimpleSourceListView *)sourceList sourceListItemForIndexPath:(NSIndexPath *)indexPath
 {
-    Class <PreferenceHost> class = NSClassFromString(self.supportedClasses[indexPath.row]);
+    Class <ORPreferenceHost> class = NSClassFromString(self.supportedClasses[indexPath.row]);
 
     ORSourceListItem *item = [[ORSourceListItem alloc] init];
     item.title = [class titleForPreferences];
@@ -61,7 +61,7 @@
     [self.currentViewController removeFromParentViewController];
     [self.currentViewController.view removeFromSuperview];
 
-    Class <PreferenceHost> class = NSClassFromString(self.supportedClasses[indexPath.row]);
+    Class <ORPreferenceHost> class = NSClassFromString(self.supportedClasses[indexPath.row]);
     self.currentViewController = [class viewControllerForPreferences];
 
     [self addChildViewController:self.currentViewController];
@@ -83,7 +83,7 @@
         for(int classIndex = 0; classIndex < numberOfClasses; classIndex++) {
             Class aClass = classes[classIndex];
 
-            if (class_conformsToProtocol(aClass, @protocol(PreferenceHost)) == YES) {
+            if (class_conformsToProtocol(aClass, @protocol(ORPreferenceHost)) == YES) {
                 [allClasses addObject:NSStringFromClass(aClass)];
             }
         }

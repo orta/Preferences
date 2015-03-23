@@ -10,7 +10,7 @@ Add support for this protocol to one of the classes in your plugin
 ```objc
 #import <AppKit/AppKit.h>
 
-@protocol PreferenceHost
+@protocol ORPreferenceHost
 
 + (NSString *)titleForPreferences;
 + (NSViewController *)viewControllerForPreferences;
@@ -18,7 +18,7 @@ Add support for this protocol to one of the classes in your plugin
 @end
 ```
 
-and return a view controller, currently the view frame is 500 by 440. If you'd like to check if someone has the plugin installed, see if  `NSClassFromString(@"PreferencesEnhancer")` returns something.
+and return a view controller, currently the view frame is 500 by 440. If you'd like to check if someone has the plugin installed, see if  `NSClassFromString(@"ORPreferencesEnhancer")` returns something.
 
 
 ### Installation

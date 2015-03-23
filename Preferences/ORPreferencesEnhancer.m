@@ -1,9 +1,9 @@
-#import "PreferencesEnhancer.h"
+#import "ORPreferencesEnhancer.h"
 #import <AppKit/AppKit.h>
 #import <objc/runtime.h>
-#import "PreferencesEditorViewController.h"
+#import "ORPreferencesEditorViewController.h"
 
-static PreferencesEnhancer *staticEnhancer;
+static ORPreferencesEnhancer *staticEnhancer;
 
 @interface NSObject (DVTViewControllerToolbarItem)
 
@@ -32,7 +32,7 @@ static PreferencesEnhancer *staticEnhancer;
 static NSString* const DMMDerivedDataExterminatorButtonIdentifier = @"me.delisa.DMMDerivedDataExterminator";
 static NSString* const DMMDerivedDataExterminatorShowButtonInTitleBar = @"DMMDerivedDataExterminatorShowButtonInTitleBar";
 
-@implementation PreferencesEnhancer
+@implementation ORPreferencesEnhancer
 
 - (void)swizzleWindowDidLoad
 {
@@ -106,7 +106,7 @@ static NSString* const DMMDerivedDataExterminatorShowButtonInTitleBar = @"DMMDer
 - (void)showPluginMenu:(NSToolbarItem *)item
 {
     if (!self.preferencesViewController) {
-        self.preferencesViewController = (id)[[PreferencesEditorViewController alloc] init];
+        self.preferencesViewController = (id)[[ORPreferencesEditorViewController alloc] init];
     }
 
     NSWindow *window = [self.preferencesWindowController window];
