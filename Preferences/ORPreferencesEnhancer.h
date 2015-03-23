@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <AppKit/AppKit.h>
 
-@interface PreferencesEnhancer : NSObject
+@interface ORPreferencesEnhancer : NSObject
 
 - (void)swizzleWindowDidLoad;
 

@@ -1,6 +1,6 @@
 #import <AppKit/AppKit.h>
 
-@interface Preferences : NSObject
+@interface ORPreferences : NSObject
 
 + (instancetype)sharedPlugin;
 

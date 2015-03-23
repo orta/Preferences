@@ -1,17 +1,17 @@
-#import "Preferences.h"
-#import "PreferencesEnhancer.h"
+#import "ORPreferences.h"
+#import "ORPreferencesEnhancer.h"
 
-static Preferences *sharedPlugin;
+static ORPreferences *sharedPlugin;
 
 @interface IDEPreferencesController : NSWindowController
 @end
 
-@interface Preferences()
-@property (nonatomic, strong, readwrite) PreferencesEnhancer *enhancer;
+@interface ORPreferences()
+@property (nonatomic, strong, readwrite) ORPreferencesEnhancer *enhancer;
 @property (nonatomic, strong, readwrite) NSBundle *bundle;
 @end
 
-@implementation Preferences
+@implementation ORPreferences
 
 + (void)pluginDidLoad:(NSBundle *)plugin
 {
@@ -35,7 +35,7 @@ static Preferences *sharedPlugin;
     if (!self) return nil;
 
     _bundle = plugin;
-    _enhancer = [[PreferencesEnhancer alloc] init];
+    _enhancer = [[ORPreferencesEnhancer alloc] init];
 
     [self.enhancer swizzleWindowDidLoad];
 

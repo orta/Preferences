@@ -1,6 +1,6 @@
 #import <AppKit/AppKit.h>
 
-@protocol PreferenceHost
+@protocol ORPreferenceHost
 
 + (NSString *)titleForPreferences;
 + (NSViewController *)viewControllerForPreferences;

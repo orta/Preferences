@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		602601221ABE31C400D5EBCB /* toolbar_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 602601211ABE31C400D5EBCB /* toolbar_icon.png */; };
 		602601241ABE436200D5EBCB /* PreferencesMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 602601231ABE436200D5EBCB /* PreferencesMenu.xib */; };
-		602601271ABE449000D5EBCB /* PreferencesEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602601261ABE449000D5EBCB /* PreferencesEditorViewController.m */; };
+		602601271ABE449000D5EBCB /* ORPreferencesEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602601261ABE449000D5EBCB /* ORPreferencesEditorViewController.m */; };
 		602601501ABE579500D5EBCB /* ORSimpleSourceListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6026014F1ABE579500D5EBCB /* ORSimpleSourceListView.m */; };
 		6026015B1ABE5F1B00D5EBCB /* ORWhiteColouredView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6026015A1ABE5F1B00D5EBCB /* ORWhiteColouredView.m */; };
 		60C8922B1ABDCA2D001801F9 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60C8922A1ABDCA2D001801F9 /* AppKit.framework */; };
 		60C8922D1ABDCA2D001801F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60C8922C1ABDCA2D001801F9 /* Foundation.framework */; };
 		60C892321ABDCA2D001801F9 /* Preferences.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = 60C892311ABDCA2D001801F9 /* Preferences.xcscheme */; };
-		60C892351ABDCA2D001801F9 /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C892341ABDCA2D001801F9 /* Preferences.m */; };
-		60C8923D1ABDD3F8001801F9 /* PreferencesEnhancer.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C8923C1ABDD3F8001801F9 /* PreferencesEnhancer.m */; };
+		60C892351ABDCA2D001801F9 /* ORPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C892341ABDCA2D001801F9 /* ORPreferences.m */; };
+		60C8923D1ABDD3F8001801F9 /* ORPreferencesEnhancer.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C8923C1ABDD3F8001801F9 /* ORPreferencesEnhancer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		602601211ABE31C400D5EBCB /* toolbar_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbar_icon.png; sourceTree = "<group>"; };
 		602601231ABE436200D5EBCB /* PreferencesMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesMenu.xib; sourceTree = "<group>"; };
-		602601251ABE449000D5EBCB /* PreferencesEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesEditorViewController.h; sourceTree = "<group>"; };
-		602601261ABE449000D5EBCB /* PreferencesEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesEditorViewController.m; sourceTree = "<group>"; };
+		602601251ABE449000D5EBCB /* ORPreferencesEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORPreferencesEditorViewController.h; sourceTree = "<group>"; };
+		602601261ABE449000D5EBCB /* ORPreferencesEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORPreferencesEditorViewController.m; sourceTree = "<group>"; };
 		6026014E1ABE579500D5EBCB /* ORSimpleSourceListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSimpleSourceListView.h; sourceTree = "<group>"; };
 		6026014F1ABE579500D5EBCB /* ORSimpleSourceListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSimpleSourceListView.m; sourceTree = "<group>"; };
 		602601591ABE5F1B00D5EBCB /* ORWhiteColouredView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORWhiteColouredView.h; sourceTree = "<group>"; };
@@ -34,10 +34,10 @@
 		60C8922C1ABDCA2D001801F9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		60C892301ABDCA2D001801F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60C892311ABDCA2D001801F9 /* Preferences.xcscheme */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Preferences.xcscheme; path = Preferences.xcodeproj/xcshareddata/xcschemes/Preferences.xcscheme; sourceTree = SOURCE_ROOT; };
-		60C892331ABDCA2D001801F9 /* Preferences.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
-		60C892341ABDCA2D001801F9 /* Preferences.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = "<group>"; };
-		60C8923B1ABDD3F8001801F9 /* PreferencesEnhancer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesEnhancer.h; sourceTree = "<group>"; };
-		60C8923C1ABDD3F8001801F9 /* PreferencesEnhancer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesEnhancer.m; sourceTree = "<group>"; };
+		60C892331ABDCA2D001801F9 /* ORPreferences.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORPreferences.h; sourceTree = "<group>"; };
+		60C892341ABDCA2D001801F9 /* ORPreferences.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORPreferences.m; sourceTree = "<group>"; };
+		60C8923B1ABDD3F8001801F9 /* ORPreferencesEnhancer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORPreferencesEnhancer.h; sourceTree = "<group>"; };
+		60C8923C1ABDD3F8001801F9 /* ORPreferencesEnhancer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORPreferencesEnhancer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,14 +92,14 @@
 			children = (
 				602601201ABE31B000D5EBCB /* Resources */,
 				609999091ABDCC3600C3431A /* PreferencesProtocol.h */,
-				60C892331ABDCA2D001801F9 /* Preferences.h */,
-				60C892341ABDCA2D001801F9 /* Preferences.m */,
-				60C8923B1ABDD3F8001801F9 /* PreferencesEnhancer.h */,
-				60C8923C1ABDD3F8001801F9 /* PreferencesEnhancer.m */,
+				60C892331ABDCA2D001801F9 /* ORPreferences.h */,
+				60C892341ABDCA2D001801F9 /* ORPreferences.m */,
+				60C8923B1ABDD3F8001801F9 /* ORPreferencesEnhancer.h */,
+				60C8923C1ABDD3F8001801F9 /* ORPreferencesEnhancer.m */,
 				60C8922F1ABDCA2D001801F9 /* Supporting Files */,
 				602601231ABE436200D5EBCB /* PreferencesMenu.xib */,
-				602601251ABE449000D5EBCB /* PreferencesEditorViewController.h */,
-				602601261ABE449000D5EBCB /* PreferencesEditorViewController.m */,
+				602601251ABE449000D5EBCB /* ORPreferencesEditorViewController.h */,
+				602601261ABE449000D5EBCB /* ORPreferencesEditorViewController.m */,
 				6026014E1ABE579500D5EBCB /* ORSimpleSourceListView.h */,
 				6026014F1ABE579500D5EBCB /* ORSimpleSourceListView.m */,
 				602601591ABE5F1B00D5EBCB /* ORWhiteColouredView.h */,
@@ -188,9 +188,9 @@
 			files = (
 				602601501ABE579500D5EBCB /* ORSimpleSourceListView.m in Sources */,
 				6026015B1ABE5F1B00D5EBCB /* ORWhiteColouredView.m in Sources */,
-				60C8923D1ABDD3F8001801F9 /* PreferencesEnhancer.m in Sources */,
-				602601271ABE449000D5EBCB /* PreferencesEditorViewController.m in Sources */,
-				60C892351ABDCA2D001801F9 /* Preferences.m in Sources */,
+				60C8923D1ABDD3F8001801F9 /* ORPreferencesEnhancer.m in Sources */,
+				602601271ABE449000D5EBCB /* ORPreferencesEditorViewController.m in Sources */,
+				60C892351ABDCA2D001801F9 /* ORPreferences.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
